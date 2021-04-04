@@ -17,9 +17,8 @@
 </head>
 
 <body>
-    <input type="checkbox" id="add-table" class="add-table_input">
-    <label for="add-table" class="overlay"></label>
-    
+    <label for="add-table" class="overlay" onclick="hideForm()"></label>
+
     <div class="container-lg">
         <div class="table-wrapper">
             <div class="table-title">
@@ -28,7 +27,8 @@
                         <h2>Quản lý sinh viên</h2>
                     </div>
                     <div class="col-sm-4">
-                        <label for="add-table" class="btn btn-info add-new">Thêm mới</label>
+                        <button for="add-table" class="btn btn-info add-new" 
+                        onclick="showForm()">Thêm mới</button>
                     </div>
                 </div>
             </div>
@@ -56,23 +56,20 @@
             <div class="spacer"></div>
 
             <div class="form-group">
-                <label for="fullname" class="form-label">Tên đầy đủ</label>
-                <input id="fullname" name="fullname" type="text" placeholder="VD: Dương Vũ"
-                    class="form-control">
+                <label for="name" class="form-label">Tên đầy đủ</label>
+                <input id="name" name="name" type="text" placeholder="VD: Dương Vũ" class="form-control">
                 <span class="form-message"></span>
             </div>
 
             <div class="form-group">
                 <label for="email" class="form-label">Email</label>
-                <input id="email" name="email" type="text" placeholder="VD: email@domain.com"
-                    class="form-control">
+                <input id="email" name="email" type="text" placeholder="VD: email@domain.com" class="form-control">
                 <span class="form-message"></span>
             </div>
 
             <div class="form-group">
                 <label for="phone" class="form-label">Số điện thoại</label>
-                <input id="phone" name="phone" type="text" placeholder="VD: 0981234567"
-                    class="form-control">
+                <input id="phone" name="phone" type="text" placeholder="VD: 0981234567" class="form-control">
                 <span class="form-message"></span>
             </div>
 
@@ -80,45 +77,23 @@
                 <label for="" class="form-label">Giới tính</label>
                 <div class="radio-form">
                     <div class="radio-item">
-                        <input name="gender" id="male" type="radio" value="male"
-                            class="form-control">
+                        <input name="gender" id="male" type="radio" value="Nam" class="form-control">
                         <label for="male">Nam</label>
                     </div>
                     <div class="radio-item">
-                        <input name="gender" id="female" type="radio" value="female"
-                            class="form-control">
+                        <input name="gender" id="female" type="radio" value="Nữ" class="form-control">
                         <label for="female">Nữ</label>
                     </div>
                 </div>
                 <span class="form-message"></span>
             </div>
 
-            <button class="form-submit">Tạo mới</button>
+            <button id="create" type="button" class="form-submit" onclick="handleCreateForm()">Tạo mới</button>
+            <button id="update" type="button" class="form-submit">Update</button>
         </form>
 
     </div>
-
-    <script src="./js/validator.js"></script>
-    <script>
-        // Mong muốn của chúng ta
-        Validator({
-            form: '#form-1',
-            formGroupSelector: '.form-group',
-            errorSelector: '.form-message',
-            rules: [
-                Validator.isRequired('#fullname', 'Vui lòng nhập tên đầy đủ của bạn'),
-                Validator.isRequired('#email'),
-                Validator.isEmail('#email'),
-                Validator.isRequired('#phone'),
-                Validator.isRequired('input[name="gender"]'),
-
-            ],
-            onSubmit: function (data) {
-                // Call API
-                console.log(data);
-            }
-        });
-    </script>
+    
     <script src="./js/main.js"></script>
 </body>
 
