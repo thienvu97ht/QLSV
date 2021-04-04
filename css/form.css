@@ -10,12 +10,12 @@ html {
     font-family: 'Roboto', sans-serif;
 }
 
-.main {
+/* .main {
     background: #f1f1f1;
     min-height: 100vh;
     display: flex;
     justify-content: center;
-}
+} */
 
 .form {
     width: 360px;
@@ -24,7 +24,6 @@ html {
     text-align: center;
     background: #fff;
     border-radius: 2px;
-    margin: 24px;
     align-self: center;
     box-shadow: 0 2px 5px 0 rgba(51, 62, 73, 0.1);
 }
@@ -120,7 +119,12 @@ html {
     margin-right: 20px;
 }
 
+.radio-item input[type="radio"] {
+    width: 18px;
+}
+
 .radio-item label {
-    margin-left: 5px;
+    margin-left: 10px;
     font-size: 14px;
+    transform: translateY(15%);
 }

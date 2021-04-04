@@ -1,67 +1,40 @@
-body {
-    color: #404E67;
-    background: #F5F7FA;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 14px;
+.add-table_input {
+    display: none;
 }
 
-.table-wrapper {
-    width: 700px;
-    margin: 30px auto;
-    background: #fff;
-    padding: 20px;
-    box-shadow: 0 1px 1px rgba(0, 0, 0, .05);
+.overlay {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: none;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: all linear 0.3s;
 }
 
-.table-title {
-    padding-bottom: 10px;
-    margin: 0 0 10px;
+.main-form {
+    position: fixed;
+    z-index: 1;
+    display: none;
+    width: 360px;
+    margin: 0;
+    padding: 0;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 0;
 }
 
-.table-title h2 {
-    margin: 6px 0 0;
-    font-size: 22px;
+.add-table_input:checked ~ .overlay {
+    display: block;
+    opacity: 1;
+    transition: all linear 0.3s;
 }
 
-.table-title .add-new {
-    float: right;
-    height: 30px;
-    font-weight: bold;
-    font-size: 12px;
-    text-shadow: none;
-    border-radius: 50px;
-    line-height: 13px;
+.add-table_input:checked ~ .main-form {
+    display: block;
+    opacity: 1;
 }
-
-.table-title .add-new i {
-    margin-right: 4px;
-}
-
-table.table tr th,
-table.table tr td {
-    border-color: #e9e9e9;
-}
-
-
-table.table th:last-child {
-    width: 100px;
-}
-
-table.table td a {
-    cursor: pointer;
-    display: inline-block;
-    margin: 0 5px;
-}
-
-table.table td a.edit {
-    color: #FFC107;
-}
-
-table.table td a.delete {
-    color: #E34724;
-}
-
-table.table td i {
-    font-size: 19px;
-}
-
